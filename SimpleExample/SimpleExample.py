@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[5]:
@@ -24,7 +24,7 @@
 #         x,y,z binary
 
 
-# In[7]:
+# In[2]:
 
 
 from pulp import *
@@ -47,4 +47,10 @@ for v in model.variables():
     
 
 print('obj=',value(model.objective))
+
+
+# In[ ]:
+
+
+
 
