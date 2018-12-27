@@ -41,17 +41,17 @@ distance=calcDistance(Lat_A,Lng_A,Lat_B,Lng_B)
 print("----",distance)
 
 
-# In[61]:
+# In[76]:
 
 
-#import numpy as np
+import numpy as np
 import pandas as pd
 def readData():
     train = pd.read_csv("Data.csv",encoding="big5")
     return train
 
 
-# In[71]:
+# In[77]:
 
 
 data=readData()
@@ -62,10 +62,11 @@ for i in range(len(data["科系"])):
 print(mapping)
 
 
-# In[ ]:
+# In[79]:
 
 
-
+a = np.zeros(shape=(len(data["科系"]),len(data["科系"])))
+print(a)
 
 
 # In[ ]:
