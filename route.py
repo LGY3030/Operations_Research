@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[1]:
 
 
 import tsp
@@ -41,7 +41,7 @@ distance=calcDistance(Lat_A,Lng_A,Lat_B,Lng_B)
 print("----",distance)
 
 
-# In[76]:
+# In[3]:
 
 
 import numpy as np
@@ -51,22 +51,57 @@ def readData():
     return train
 
 
-# In[77]:
+# In[10]:
 
 
 data=readData()
 mapping={}
 print(data)
 for i in range(len(data["科系"])):
-    mapping[data["科系"][i]]=i
+    mapping[i]=data["科系"][i]
 print(mapping)
 
 
-# In[79]:
+# In[5]:
 
 
-a = np.zeros(shape=(len(data["科系"]),len(data["科系"])))
-print(a)
+distance = np.zeros(shape=(len(data["科系"]),len(data["科系"])))
+print(distance)
+
+
+# In[6]:
+
+
+for i in range(len(data["科系"])):
+    for j in range(len(data["科系"])):
+        if i==j:
+            distance[i][j]=0
+        else:
+            distance[i][j]=calcDistance(data["緯度"][i],data["經度"][i],data["緯度"][j],data["經度"][j])
+print(distance)
+
+
+# In[7]:
+
+
+distance=list(distance)
+r = range(len(distance))
+dist = {(i, j): distance[i][j] for i in r for j in r}
+ans=tsp.tsp(r, dist)
+print(ans)
+
+
+# In[8]:
+
+
+print(type(ans))
+
+
+# In[11]:
+
+
+for i in range(len(ans[1])):
+    print(mapping[i])
 
 
 # In[ ]:
