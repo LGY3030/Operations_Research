@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 import tsp
@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 
-# In[4]:
+# In[2]:
 
 
 def calcDistance(Lat_A, Lng_A, Lat_B, Lng_B):
@@ -25,7 +25,7 @@ def calcDistance(Lat_A, Lng_A, Lat_B, Lng_B):
     return s;
 
 
-# In[5]:
+# In[3]:
 
 
 def readData():
@@ -33,7 +33,7 @@ def readData():
     return train
 
 
-# In[6]:
+# In[4]:
 
 
 data=readData()
@@ -44,14 +44,14 @@ for i in range(len(data["科系"])):
 print(mapping)
 
 
-# In[7]:
+# In[5]:
 
 
 distance = np.zeros(shape=(len(data["科系"]),len(data["科系"])))
 print(distance)
 
 
-# In[8]:
+# In[6]:
 
 
 for i in range(len(data["科系"])):
@@ -63,7 +63,7 @@ for i in range(len(data["科系"])):
 print(distance)
 
 
-# In[9]:
+# In[7]:
 
 
 distance=list(distance)
@@ -73,16 +73,16 @@ ans=tsp.tsp(r, dist)
 print(ans)
 
 
-# In[10]:
+# In[8]:
 
 
 print(type(ans))
 
 
-# In[11]:
+# In[9]:
 
 
-for i in range(len(ans[1])):
+for i in ans[1]:
     print(mapping[i])
 
 
