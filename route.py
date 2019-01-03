@@ -63,7 +63,7 @@ for i in range(len(data["科系"])):
 print(distance)
 
 
-# In[7]:
+# In[11]:
 
 
 distance=list(distance)
@@ -73,10 +73,12 @@ ans=tsp.tsp(r, dist)
 print(ans)
 
 
-# In[8]:
+# In[10]:
 
 
 print(type(ans))
+print(type(dist))
+print(r)
 
 
 # In[9]:
